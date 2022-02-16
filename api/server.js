@@ -1,7 +1,7 @@
 const express = require('express');
 
 class Server {
-    constructor({ config, router, container }) {
+    constructor({ config, router }) {
          this._config = config;
          this._express = express();
          this._express.use(router);
@@ -10,9 +10,10 @@ class Server {
     //primer metodo
     async start() {
         return new Promise((resolve, reject) => {
-            const http=this._express.listen(config.PORT, () =>{
-                const {port} =http.address();
+            const http = this._express.listen(this._config.PORT, () =>{
+                const {port} = http.address();
                 console.log(`Server on port ${port}`);
+                resolve();
             } );
 
         });

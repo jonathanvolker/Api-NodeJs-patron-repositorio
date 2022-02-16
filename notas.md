@@ -12,4 +12,10 @@ dependiendo de si solicitan app o server.
 *routes
 index.js va a ser quien se encargue de todas las rutas
 
+-user.routes.js indica el controlador
 
+*controllers
+-index.js indica el controlador
+
+################
+index.js va a iniciar una instancia de StartUp (quien inyecta el server al container)

@@ -1,1 +1,12 @@
-const { DB } = require('./config/environments');
+const container = require("./api/container");
+
+// solicito una instancia de una de las dependencias del container
+const aplication = container.resolve("app");
+
+//app tiene metodos: 
+//start es async
+aplication.start().catch(error =>{
+    console.log(error);
+    //en caso de que falle cierra todo
+    process.exit();
+});
