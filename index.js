@@ -5,6 +5,7 @@ const aplication = container.resolve("app");
 
 //app tiene metodos: 
 //start es async
+//capturo el error porque el return del Server es una promesa
 aplication.start().catch(error =>{
     console.log(error);
     //en caso de que falle cierra todo
