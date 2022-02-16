@@ -13,7 +13,7 @@ module.exports = function({ UserRoutes }){
     apiRoute
     .use(cors())
     .use(bodyParser.json())
-    .use(compression)
+    .use(compression())
 
     apiRoute.use("/user", UserRoutes)
     router.use("/api", apiRoute)
