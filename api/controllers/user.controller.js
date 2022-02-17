@@ -1,7 +1,7 @@
 
 class UserController{
-    constructor({  }){
-        
+    constructor({UserService}){
+        this._userService = UserService;
     }
 
     sayHello(req, res){ 
@@ -13,6 +13,7 @@ class UserController{
     async getUsers(){
         return await this._userService.getUsers();
     }
+    
 
 }
 
