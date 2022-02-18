@@ -15,18 +15,19 @@ class UserBusiness {
 
     async getUser(id){
         const user = await this._userRepository.getUser(id);
-        return mapper(User, user);
+        return mapper(User, user.toJSON());
     }
 
     async createUser(user){
         user = mapper(User, user);
         const createdUser = await this._userRepository.createUser(user);
-        return mapper(User, createUser);
+        return mapper(User, createdUser.toJSON());
 
     }
 
     async updateUser(id, user){
         user = mapper(User, user);
+        user.id =id;
         const updatedUser = await this._userRepository.updateUser(id, user);
         return mapper(User, updatedUser);
     }

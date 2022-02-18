@@ -4,7 +4,7 @@ module.exports = {
     DB: {
       username: "postgres",
       password: "12345",
-      database: "superapi",
+      database: "superapidev",
       host: "localhost",
       dialect: "postgres",
       logging: false
