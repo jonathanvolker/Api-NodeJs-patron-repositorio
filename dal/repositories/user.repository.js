@@ -4,6 +4,7 @@ class UserRepository {
     }
 
     getUsers(){
+        
         return this._db.users.findAll();
     }
 

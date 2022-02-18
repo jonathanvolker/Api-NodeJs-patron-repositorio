@@ -16,4 +16,5 @@ application.start().then(async()=>{
     console.log(error);
     //en caso de que falle cierra todo
     process.exit();
+
 });
