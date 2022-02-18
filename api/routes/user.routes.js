@@ -9,7 +9,7 @@ module.exports =function({ UserController }){
 
     router.post("/", UserController.createUser.bind(UserController));
     router.put("/:id", UserController.updateUser.bind(UserController));
-    router.delete("/id", UserController.deleteUser.bind(UserController));
+    router.delete("/:id", UserController.deleteUser.bind(UserController));
 
 
     

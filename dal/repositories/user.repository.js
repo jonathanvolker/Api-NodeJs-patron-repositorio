@@ -15,9 +15,9 @@ class UserRepository {
     }
 
     updateUser(id, user){
-        return this._db.users.update(user, {whre:{id}})
+        return this._db.users.update(user, {where:{id}})
     }
-    deleteUSer(id){
+    deleteUser(id){
         return this._db.users.destroy({where:{id}});
     }
 }
