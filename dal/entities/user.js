@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define(
+    const User = sequelize.define(
         'users', 
     {
         id: {
@@ -22,4 +22,19 @@ module.exports = (sequelize, DataTypes) => {
         tableName:"users"
     })
 
+    //Asociaciones
+
+    User.associate = function(models){
+        User.belongsTo(models.classrooms,{
+            foreignKey: 'classroomId',
+            as: 'classrooms'
+        });
+        User.belongsToMany(models.courses,{
+            through: 'usercourses',
+            as: 'courses',
+            foreignKey: 'id'
+        })
+    }
+
+    return User;
 }
