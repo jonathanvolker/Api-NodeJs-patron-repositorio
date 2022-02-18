@@ -41,3 +41,7 @@ dependiendo de si solicitan app o server.
 /dal (data acces layer)
 
 
+--------------------------------------------------------------------------------------------------------------------
+conectada imagen de Bd en Docker
+comando:
+docker run -d -p 5432:5432 --name superapi -e POSTGRES_PASSWORD=12345 postgres   
