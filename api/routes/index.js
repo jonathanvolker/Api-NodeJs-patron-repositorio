@@ -12,6 +12,8 @@ module.exports = function({ UserRoutes }){
     //indico el middleware 
     apiRoute
     .use(cors())
+    
+    //body parser y compression permiten enviar el body entere
     .use(bodyParser.json())
     .use(compression())
 

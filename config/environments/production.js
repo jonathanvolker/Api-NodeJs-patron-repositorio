@@ -1,10 +1,10 @@
 module.exports = {
     PORT: process.env.PORT,
     DB: {
-        USER: process.env.DB_USER,
-        PASSWORD: process.env.DB_PASSWORD,
-        DATABASE: process.env.DB_DATABASE,
-        HOST: process.env.DB_HOST,
-        DIALECT: process.env.DB_DIALECT,
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DATABASE,
+        host: process.env.DB_HOST,
+        dialect: process.env.DB_DIALECT,
     }
 }

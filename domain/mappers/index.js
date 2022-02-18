@@ -1,4 +1,4 @@
-const { User } =require("../user");
+const  User  =require("../user");
 
 module.exports = {
     //mapeo el user que venga de cualquier capa a una entidad de mi dominio
