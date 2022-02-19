@@ -1,28 +1,21 @@
-const {Router} = require("express")
+const { Router } = require("express");
 const bodyParser = require("body-parser");
-const cors =require("cors")
-//comprime peticiones http
+const cors = require("cors");
 const compression = require("compression");
 
+module.exports = function({ StudentRoutes, TeacherRoutes, CourseRoutes }) {
+  const router = Router();
+  const apiRoute = Router();
 
-module.exports = function({ UserRoutes }){
-    const router = Router ();
-    const apiRoute = Router();
-
-    //indico el middleware 
-    apiRoute
+  apiRoute
     .use(cors())
-    
-    //body parser y compression permiten enviar el body entere
     .use(bodyParser.json())
-    .use(compression())
+    .use(compression());
 
-    apiRoute.use("/user", UserRoutes)
-    router.use("/api", apiRoute)
-    /*
-        para el use seria: 
-        GET /api/user/metodoQueQuieroQueEjecute
-    */
+  apiRoute.use("/student", StudentRoutes);
+  apiRoute.use("/teacher", TeacherRoutes);
+  apiRoute.use("/course", CourseRoutes);
+  router.use("/api", apiRoute);
 
-    return router;
-}
+  return router;
+};

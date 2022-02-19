@@ -1,4 +1,4 @@
-const mapper =require("automapper-js")
+/* const mapper =require("automapper-js")
 const { User } = require("./models")
 
 class UserBusiness {
@@ -35,4 +35,4 @@ class UserBusiness {
         return await this._userRepository.deleteUser(id);
     }
 }
-module.exports = UserBusiness;
+module.exports = UserBusiness; */
