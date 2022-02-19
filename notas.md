@@ -10,9 +10,11 @@ Es una práctica de desarrollo de software que pone el acento en el Dominio del 
 -middlewares.
 -configuracion del servidor.
 
-2 services: Intermediario entre el pedido de la api y los datos, una vez fijo metodo en api se llama a services.
+2 services: Intermediario entre el pedido de la api y los datos, una vez fijo metodo en api se llama a services y el mismo se encarga de procesar esos datos a bd, otra api o cualquier otro servicio requerido.
 
-3 domain: Concentra las entidades del uso de la aplicacion.
+3 domain: Concentra las entidades del uso de la aplicacion, logica y procesamiento de informacion.(no usa la informacion que entra directamente de la api sino que usa los datos que provee services)
+
+5 dal (data access layer): Se encarga de la comunicacion con la base de datos con los metodos requeridos, es el punto de entrada a la base de datos o cualquier recurso que contenga informacion.
 
 4 config: Dependiendo el entorno se aplican diferentes configuraciones que son utilizadas por las demas capas.
 
@@ -42,6 +44,13 @@ dependiendo de si solicitan app o server.
 
 
 --------------------------------------------------------------------------------------------------------------------
-conectada imagen de Bd en Docker
+Conectando imagen de BD en Docker
 comando:
-docker run -d -p 5432:5432 --name superapi -e POSTGRES_PASSWORD=12345 postgres   
+$ docker run -d -p 5432:5432 --name superapi -e POSTGRES_PASSWORD=12345 postgres  
+
+Crear modelo en terminal usando sequelize cli:
+$ sequelize init
+$ sequelize model:create --name <modelName> --attributes atrb1:value, atrb2:value
+
+$ sequelize db:migrate --url "postgres://postgres:12345@localhost:5432/superapidev"
+
